@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c2tmuqrb8ndq0"
+path="res://.godot/imported/Pit.obj-38699edb9f4cd287a97342671f7d063d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Pit.obj-38699edb9f4cd287a97342671f7d063d.mesh"]
+
+source_file="res://assets/models/Pit/Pit.obj"
+dest_files=["res://.godot/imported/Pit.obj-38699edb9f4cd287a97342671f7d063d.mesh", "res://.godot/imported/Pit.obj-38699edb9f4cd287a97342671f7d063d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

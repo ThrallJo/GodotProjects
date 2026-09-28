@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://dpy1rpih6gwau"]
+
+[ext_resource type="Script" uid="uid://dubiyw1640rjo" path="res://utilities/day_night_cycle.gd" id="1_5rkqe"]
+
+[sub_resource type="Curve" id="Curve_6tnog"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_5rkqe"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(0.81960785, 0.41960785, 0.07058824, 1, 1, 0.7490196, 0.6392157, 1, 1, 0.7490196, 0.6392157, 1, 0.81797206, 0.42099774, 0.071675144, 1)
+
+[sub_resource type="Curve" id="Curve_5rkqe"]
+_data = [Vector2(0.20189273, 0), 0.0, 0.0, 0, 0, Vector2(0.3533123, 0.9918033), 0.0, 0.0, 0, 0, Vector2(0.7003155, 1), 0.0, 0.0, 0, 0, Vector2(0.8044164, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_je3qe"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.21164855, 0.17055851, 0.44064182, 1)
+
+[sub_resource type="Curve" id="Curve_n52hk"]
+_data = [Vector2(0, 0.14754093), 0.0, 0.0, 0, 0, Vector2(0.28391168, 0), 0.0, 0.0, 0, 0, Vector2(0.7507887, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.14754093), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_n52hk"]
+offsets = PackedFloat32Array(0.1, 0.4, 0.6, 0.9)
+colors = PackedColorArray(0.25623965, 0.4113492, 0.7427351, 1, 0.12603769, 0.7022341, 0.74286014, 1, 0.1254902, 0.7019608, 0.7411765, 1, 0.25490198, 0.4117647, 0.7411765, 1)
+
+[sub_resource type="Gradient" id="Gradient_ivtli"]
+offsets = PackedFloat32Array(0.1, 0.22680412, 0.4, 0.6, 0.742268, 0.9)
+colors = PackedColorArray(0.25623965, 0.4113492, 0.7427351, 1, 0.91697055, 0.36935812, 0.013239422, 1, 0.12603769, 0.7022341, 0.74286014, 1, 0.1254902, 0.7019608, 0.7411765, 1, 0.91764706, 0.36862746, 0.011764706, 1, 0.25490198, 0.4117647, 0.7411765, 1)
+
+[sub_resource type="Curve" id="Curve_je3qe"]
+_limits = [0.0, 0.097561, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5049181, 0.027761258), 0.0, 0.0, 0, 0, Vector2(1, 0.097561), 0.2864838, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ivtli"]
+_data = [Vector2(0, 0.8534482), 0.0, 0.0, 0, 0, Vector2(0.50163937, 0.9568965), 0.0, 0.0, 0, 0, Vector2(1, 0.96551716), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gbfbk"]
+sky_top_color = Color(0.25216055, 0.4179122, 0.7411765, 1)
+sky_horizon_color = Color(0.2816046, 0.41002667, 0.7117878, 1)
+ground_bottom_color = Color(0.25216055, 0.4179122, 0.7411765, 1)
+ground_horizon_color = Color(0.2816046, 0.41002667, 0.7117878, 1)
+
+[sub_resource type="Sky" id="Sky_g5fqd"]
+sky_material = SubResource("ProceduralSkyMaterial_gbfbk")
+
+[sub_resource type="Environment" id="Environment_gqoea"]
+background_mode = 2
+sky = SubResource("Sky_g5fqd")
+ambient_light_source = 2
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+ssao_enabled = true
+glow_enabled = true
+volumetric_fog_enabled = true
+adjustment_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_pkg7o"]
+dof_blur_far_distance = 20.0
+dof_blur_amount = 0.097561
+
+[node name="DayNightCycle" type="Node3D" unique_id=74389395]
+script = ExtResource("1_5rkqe")
+start_time = 0.0
+time_curve = SubResource("Curve_6tnog")
+sun_color = SubResource("Gradient_5rkqe")
+sun_intensity = SubResource("Curve_5rkqe")
+moon_color = SubResource("Gradient_je3qe")
+moon_intensity = SubResource("Curve_n52hk")
+sky_top_color = SubResource("Gradient_n52hk")
+sky_horizon_color = SubResource("Gradient_ivtli")
+dof_enabled = false
+dof_falloff = SubResource("Curve_je3qe")
+contrast = SubResource("Curve_ivtli")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1972840762]
+environment = SubResource("Environment_gqoea")
+camera_attributes = SubResource("CameraAttributesPractical_pkg7o")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1529533726]
+transform = Transform3D(0.89648646, -0.34776992, -0.2745324, 5.4168265e-08, 0.61961275, -0.7849076, 0.44307107, 0.70365906, 0.5554744, 0, 0, -4.868913)
+visible = false
+light_color = Color(0.8825041, 0.5372872, 0.27287808, 1)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="Moon" type="DirectionalLight3D" parent="." unique_id=1851591904]
+transform = Transform3D(0.8965304, 0.3477001, -0.27447766, 5.4168293e-08, 0.61961305, 0.78490746, 0.44298232, -0.7036934, 0.5555019, 0, 0, -4.868913)
+light_color = Color(0.21164855, 0.17055851, 0.44064182, 1)
+light_energy = 0.08986184
+shadow_enabled = true
+sky_mode = 1

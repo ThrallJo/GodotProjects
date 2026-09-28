@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dym77t730auoh"]
+
+[ext_resource type="Script" uid="uid://dex0gtjnn501a" path="res://character/npc/npc.gd" id="1_7yayd"]
+[ext_resource type="PackedScene" uid="uid://doe21r7fdvxv2" path="res://character/npc/ai_character_mover.tscn" id="2_f8vhi"]
+[ext_resource type="PackedScene" uid="uid://ckreycs1addnx" path="res://character/npc/vision_manager.tscn" id="3_fbg1g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gqoea"]
+
+[node name="NPC" type="CharacterBody3D" unique_id=1396229259]
+script = ExtResource("1_7yayd")
+
+[node name="Graphics" type="Node3D" parent="." unique_id=248190398]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=967949791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_gqoea")
+
+[node name="AICharacterMover" parent="." unique_id=1701026550 instance=ExtResource("2_f8vhi")]
+
+[node name="VisionManager" parent="." unique_id=1755511933 instance=ExtResource("3_fbg1g")]

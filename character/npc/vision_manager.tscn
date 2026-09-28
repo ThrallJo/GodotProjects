@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ckreycs1addnx"]
+
+[ext_resource type="Script" uid="uid://b0qavvci6myf" path="res://character/npc/vision_manager.gd" id="1_377ia"]
+
+[node name="VisionManager" type="Node3D" unique_id=1755511933]
+script = ExtResource("1_377ia")
+
+[node name="LOSRayCast" type="RayCast3D" parent="." unique_id=1060651060]
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=618742414]
+aabb = AABB(-1, 0, -1, 2, 2, 2)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

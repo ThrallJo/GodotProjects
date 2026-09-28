@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dm2af75r78tmy"]
+
+[ext_resource type="PackedScene" uid="uid://dym77t730auoh" path="res://character/npc/npc.tscn" id="1_ydj5p"]
+
+[node name="ScaredNPC" unique_id=1396229259 instance=ExtResource("1_ydj5p")]

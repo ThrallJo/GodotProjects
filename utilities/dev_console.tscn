@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b3rrknhlvudn5"]
+
+[ext_resource type="Script" uid="uid://dtjspt122l5p0" path="res://utilities/dev_console.gd" id="1_tfpcp"]
+
+[node name="DevConsole" type="CanvasLayer" unique_id=1098295324]
+script = ExtResource("1_tfpcp")
+
+[node name="TextEditContainer" type="TextEdit" parent="." unique_id=1786885762]
+offset_right = 324.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 12
+
+[node name="Background" type="ColorRect" parent="TextEditContainer" unique_id=974560604]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Contents" type="VBoxContainer" parent="TextEditContainer" unique_id=491214461]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Console" type="RichTextLabel" parent="TextEditContainer/Contents" unique_id=328787086]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 190)
+custom_maximum_size = Vector2(320, 190)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+fit_content = true
+vertical_alignment = 2
+
+[node name="TextInput" type="LineEdit" parent="TextEditContainer/Contents" unique_id=382784703]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 12
+placeholder_text = "Text here..."

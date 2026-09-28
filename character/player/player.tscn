@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bb6fyxfppye5k"]
+
+[ext_resource type="Script" uid="uid://2snwfd1cbrh5" path="res://character/player/player.gd" id="1_y0s34"]
+[ext_resource type="PackedScene" uid="uid://kaexnpcc1vyd" path="res://character/character_mover.tscn" id="2_gtsfv"]
+[ext_resource type="PackedScene" uid="uid://b3rrknhlvudn5" path="res://utilities/dev_console.tscn" id="3_gtsfv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0s34"]
+albedo_color = Color(0, 0.7913156, 0.27948835, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gqoea"]
+material = SubResource("StandardMaterial3D_y0s34")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y0s34"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_g5fqd"]
+height_falloff = 1.1486962e-05
+edge_fade = 1000000.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_gqoea"]
+size = Vector3(7.374756, 4.955017, 1)
+
+[node name="Player" type="CharacterBody3D" unique_id=119056893]
+script = ExtResource("1_y0s34")
+
+[node name="CharacterMover" parent="." unique_id=1701026550 instance=ExtResource("2_gtsfv")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2016854245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_gqoea")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=690453203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_y0s34")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=476554845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+fov = 90.0
+
+[node name="WeaponsManager" type="Node3D" parent="Camera3D" unique_id=202375922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+
+[node name="Lantern" type="Node3D" parent="Camera3D/WeaponsManager" unique_id=1077120325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9242662, 1.3053954, -0.3534165)
+visible = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D/WeaponsManager/Lantern" unique_id=1613970122]
+visible = false
+light_color = Color(1, 1, 0.70980394, 1)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D/WeaponsManager/Lantern" unique_id=1009112671]
+transform = Transform3D(0.9988141, 0, -0.048687115, 0, 1, 0, 0.048687115, 0, 0.9988141, 0, 0, 0)
+light_color = Color(1, 1, 0.70980394, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 10.0
+shadow_enabled = true
+spot_range = 30.0
+spot_angle = 50.0
+
+[node name="FogVolume" type="FogVolume" parent="Camera3D/WeaponsManager/Lantern" unique_id=1297728190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97302246, 0.22647095, -4.721508)
+size = Vector3(7.0563965, 9.179626, 10.260864)
+material = SubResource("FogMaterial_g5fqd")
+
+[node name="DevConsole" parent="." unique_id=1098295324 instance=ExtResource("3_gtsfv")]
+
+[node name="DebugCube" type="MeshInstance3D" parent="." unique_id=550562208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84650326, 0.17262149, -6.877137)
+visible = false
+mesh = SubResource("BoxMesh_gqoea")
