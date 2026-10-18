@@ -1,5 +1,30 @@
 [gd_scene format=3 uid="uid://ud5fy46p1n5d"]
 
 [ext_resource type="PackedScene" uid="uid://dym77t730auoh" path="res://character/npc/npc.tscn" id="1_ndysw"]
+[ext_resource type="Script" uid="uid://dts0430del5w2" path="res://character/npc/stalker_npc.gd" id="2_ael2a"]
+[ext_resource type="PackedScene" uid="uid://d1yu1q0a02ymv" path="res://assets/models/Bird Monster/birdmonster.glb" id="3_lpaof"]
 
-[node name="StalkerNPC" unique_id=1396229259 instance=ExtResource("1_ndysw")]
+[node name="StalkerNPC" unique_id=1396229259 node_paths=PackedStringArray("animation_player") instance=ExtResource("1_ndysw")]
+script = ExtResource("2_ael2a")
+animation_player = NodePath("Graphics/birdmonster/AnimationPlayer")
+can_wander = false
+
+[node name="birdmonster" parent="Graphics" parent_id_path=PackedInt32Array(248190398) index="0" unique_id=1026270002 instance=ExtResource("3_lpaof")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Graphics/birdmonster/Armature" parent_id_path=PackedInt32Array(1026270002, 916877264) index="0" unique_id=1110576754]
+bones/1/rotation = Quaternion(0.09081844, 1.1871663e-07, 1.0826393e-08, 0.99586743)
+bones/2/rotation = Quaternion(0.041413687, 0.11276918, 0.9319039, -0.3422327)
+bones/3/rotation = Quaternion(0.138149, -0.055040017, -0.31553817, 0.93718785)
+bones/4/rotation = Quaternion(-0.041413903, 0.11276911, 0.93190396, 0.3422327)
+bones/5/rotation = Quaternion(0.13814898, 0.05504002, 0.31553817, 0.93718785)
+bones/6/rotation = Quaternion(0.32842815, 0.15472753, 0.9314316, -0.025092863)
+bones/7/rotation = Quaternion(-0.2812622, 0.002324809, 0.014166454, 0.9595237)
+bones/8/rotation = Quaternion(-0.32842797, 0.15472756, 0.9314316, 0.025092868)
+bones/8/scale = Vector3(0.99997485, 0.9999999, 1)
+bones/9/rotation = Quaternion(-0.2812622, -0.002324824, -0.014166459, 0.9595237)
+
+[node name="AICharacterMover" parent="." index="2" unique_id=1701026550]
+max_speed = 15.0
+
+[editable path="Graphics/birdmonster"]

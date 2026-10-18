@@ -74,6 +74,7 @@ func toggle_time_freeze() -> bool:
 	return is_time_frozen
 
 func _process(delta: float) -> void:
+	if get_tree() == null: return
 	if not is_time_frozen: true_time += time_rate * delta
 	calculate_daytime()
 
@@ -89,6 +90,7 @@ func calculate_daytime():
 	if true_time >= 1.0:
 		true_time = 0.0
 	
+	if time_curve == null: return
 	var time = time_curve.sample(true_time)
 	sun.rotation_degrees.x = (time * 360) + 90
 	sun.light_color = sun_color.sample(time)

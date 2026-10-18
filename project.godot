@@ -15,6 +15,15 @@ run/main_scene="uid://dgbseny8nwarn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://6s6kyc2fghq2"
+
+[autoload]
+
+Global="*uid://cp7bg7h0vgrkb"
+Commands="*uid://bq8ct5nnsttti"
+
 [display]
 
 window/size/viewport_width=640
@@ -28,12 +37,18 @@ window/stretch/aspect="expand"
 
 folder_colors={
 "res://assets/": "yellow",
-"res://character/": "green"
+"res://character/": "green",
+"res://effects/": "teal",
+"res://effects/blood_effects/": "red",
+"res://weapons/": "red"
 }
 
 [global_group]
 
 DayNightCycle=""
+player=""
+navigation_mesh_source_group=""
+world=""
 
 [input]
 
@@ -108,10 +123,19 @@ dev_console_next={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="environment"
+3d_physics/layer_2="character"
+3d_physics/layer_3="interactable"
+3d_physics/layer_4="hitboxes"
+3d_physics/layer_7="physics_object"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

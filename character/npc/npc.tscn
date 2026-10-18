@@ -3,18 +3,52 @@
 [ext_resource type="Script" uid="uid://dex0gtjnn501a" path="res://character/npc/npc.gd" id="1_7yayd"]
 [ext_resource type="PackedScene" uid="uid://doe21r7fdvxv2" path="res://character/npc/ai_character_mover.tscn" id="2_f8vhi"]
 [ext_resource type="PackedScene" uid="uid://ckreycs1addnx" path="res://character/npc/vision_manager.tscn" id="3_fbg1g"]
+[ext_resource type="PackedScene" uid="uid://csfn6upo0rgy2" path="res://character/health_manager.tscn" id="4_drvh7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gqoea"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbg1g"]
+albedo_color = Color(1, 1, 0, 0.73333335)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g5fqd"]
+material = SubResource("StandardMaterial3D_fbg1g")
+size = Vector3(0.2, 1, 0.2)
+
 [node name="NPC" type="CharacterBody3D" unique_id=1396229259]
+collision_layer = 2
 script = ExtResource("1_7yayd")
+flee_angle_limit = 1.0
+time_to_calm = 0.0
 
 [node name="Graphics" type="Node3D" parent="." unique_id=248190398]
+
+[node name="HealthManager" parent="." unique_id=743393274 instance=ExtResource("4_drvh7")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=967949791]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_gqoea")
 
 [node name="AICharacterMover" parent="." unique_id=1701026550 instance=ExtResource("2_f8vhi")]
+max_speed = 5.0
 
 [node name="VisionManager" parent="." unique_id=1755511933 instance=ExtResource("3_fbg1g")]
+sight_arc = 50.0
+
+[node name="Sounds" type="Node3D" parent="." unique_id=1037582231]
+
+[node name="AttackSound" type="AudioStreamPlayer3D" parent="Sounds" unique_id=2124675750]
+bus = &"SFX"
+
+[node name="AlertSound" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1329299021]
+bus = &"SFX"
+
+[node name="DebugPoints" type="Node3D" parent="." unique_id=1974547839]
+
+[node name="DestinationIndicator" type="MeshInstance3D" parent="DebugPoints" unique_id=481719463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, 1, -7.450581e-09)
+mesh = SubResource("BoxMesh_g5fqd")
+
+[node name="AlertCooldown" type="Timer" parent="." unique_id=1721402657]
+one_shot = true
+
+[connection signal="timeout" from="AlertCooldown" to="." method="_on_alert_cooldown_timeout"]

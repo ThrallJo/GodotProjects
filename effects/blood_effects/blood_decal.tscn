@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bnq37p8vfrlwc"]
+
+[ext_resource type="Texture2D" uid="uid://b8ucq4afb1ej3" path="res://effects/blood_effects/blood_splatter.png" id="1_vsn3r"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_gqoea"]
+size = Vector2(2, 2)
+
+[node name="BloodDecal" type="Node3D" unique_id=1387201743]
+
+[node name="DebugMeshInstance3D" type="MeshInstance3D" parent="." unique_id=818381522]
+visible = false
+mesh = SubResource("QuadMesh_gqoea")
+
+[node name="Decal" type="Decal" parent="." unique_id=917163457]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0)
+size = Vector3(2, 0.2, 2)
+texture_albedo = ExtResource("1_vsn3r")
+modulate = Color(0.8, 0, 0, 1)

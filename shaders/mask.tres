@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dpvt3b1vv3yqh"]
+
+[ext_resource type="Shader" uid="uid://l4pjl1m6n67t" path="res://shaders/mask.gdshader" id="1_k3xbc"]
+[ext_resource type="Texture2D" uid="uid://dtq7qig1tju5a" path="res://effects/circle32.png" id="2_lxqpd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_k3xbc")
+shader_parameter/texture_mask = ExtResource("2_lxqpd")

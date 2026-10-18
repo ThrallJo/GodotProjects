@@ -1,5 +1,96 @@
 [gd_scene format=3 uid="uid://dm2af75r78tmy"]
 
 [ext_resource type="PackedScene" uid="uid://dym77t730auoh" path="res://character/npc/npc.tscn" id="1_ydj5p"]
+[ext_resource type="Script" uid="uid://c4g5gsm6sajm0" path="res://character/npc/scared_npc.gd" id="2_yybta"]
+[ext_resource type="PackedScene" uid="uid://dm81thacfgl0q" path="res://assets/models/crow/Crow.fbx" id="3_tew2y"]
+[ext_resource type="PackedScene" uid="uid://d1yu1q0a02ymv" path="res://assets/models/Bird Monster/birdmonster.glb" id="3_txt0c"]
 
-[node name="ScaredNPC" unique_id=1396229259 instance=ExtResource("1_ydj5p")]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_txt0c"]
+load_path = "res://.godot/imported/birdmonster_birdmonster.png-91c513d87d66d28271c2944f1fbcfa34.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tew2y"]
+resource_name = "birdmonster"
+cull_mode = 2
+albedo_color = Color(0.29219002, 0.29219005, 0.29219002, 1)
+albedo_texture = SubResource("CompressedTexture2D_txt0c")
+roughness = 0.4
+emission_enabled = true
+texture_filter = 2
+metadata/_gltf_primary_texture_coord = 0
+
+[node name="ScaredNPC" unique_id=1396229259 node_paths=PackedStringArray("animation_player") instance=ExtResource("1_ydj5p")]
+script = ExtResource("2_yybta")
+animation_player = NodePath("Graphics/birdmonster/AnimationPlayer")
+boredom_time = 6.0
+
+[node name="Crow" parent="Graphics" parent_id_path=PackedInt32Array(248190398) index="0" unique_id=1730394482 instance=ExtResource("3_tew2y")]
+visible = false
+
+[node name="Skeleton3D" parent="Graphics/Crow/Armature" parent_id_path=PackedInt32Array(1730394482, 905776621) index="0" unique_id=1290690964]
+bones/1/position = Vector3(1.3861889e-17, 0.0042397133, -2.6958988e-10)
+bones/1/rotation = Quaternion(-0.052779727, 0.04586979, -0.008621888, 0.9975149)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/position = Vector3(-1.3438239e-16, 0.0051872395, 5.6364075e-10)
+bones/2/rotation = Quaternion(-0.055134505, 9.506867e-15, -1.3145092e-08, 0.99847895)
+bones/2/scale = Vector3(1, 0.99999994, 0.99999994)
+bones/3/position = Vector3(1.5539124e-11, -0.0008122587, 3.258784e-05)
+bones/3/rotation = Quaternion(0.9960253, 3.185414e-08, -1.18733595e-07, 0.089070514)
+bones/3/scale = Vector3(1, 1, 0.99999267)
+bones/4/rotation = Quaternion(0.3027069, 0.71810144, 0.5098391, -0.36436674)
+bones/4/scale = Vector3(0.99999994, 1.0000001, 1)
+bones/5/position = Vector3(3.1456757e-10, 0.0074027986, 5.839862e-10)
+bones/5/rotation = Quaternion(-0.27859956, 0.0068614287, -0.012013223, 0.9603077)
+bones/5/scale = Vector3(0.9999999, 1, 1)
+bones/6/position = Vector3(-6.8272227e-10, 0.0077628163, -2.0376563e-09)
+bones/6/rotation = Quaternion(-0.000119406155, -9.03755e-05, -0.0177333, 0.99984276)
+bones/6/scale = Vector3(1.0000001, 1, 0.99999994)
+bones/7/rotation = Quaternion(-0.35232174, 0.7074556, 0.48416522, 0.37544662)
+bones/7/scale = Vector3(0.99999994, 0.9999997, 1)
+bones/8/position = Vector3(-4.4629905e-10, 0.007402799, -2.6006647e-10)
+bones/8/rotation = Quaternion(-0.29665616, -0.011595627, 0.013282717, 0.95482165)
+bones/8/scale = Vector3(0.9999999, 1.0000001, 1)
+bones/9/position = Vector3(3.424434e-10, 0.007762818, -1.4724096e-09)
+bones/9/rotation = Quaternion(-0.0014489468, -0.0023529108, -0.003659727, 0.99998957)
+bones/9/scale = Vector3(1.0000001, 1, 0.99999994)
+bones/10/position = Vector3(0.0011299873, -0.0004690883, -0.00015397565)
+bones/10/rotation = Quaternion(0.959181, 0.27279627, -0.027896238, 0.0691069)
+bones/10/scale = Vector3(1.0000002, 1.0000001, 0.99999994)
+bones/11/position = Vector3(-0.0011299875, -0.0004690883, -0.00015397457)
+bones/11/rotation = Quaternion(0.959297, -0.27238816, 0.027866233, 0.069118805)
+bones/11/scale = Vector3(0.9999999, 0.9999998, 0.99999994)
+bones/12/position = Vector3(-0.0012542179, 0.0021774436, -0.0007203921)
+bones/12/rotation = Quaternion(-0.09630344, 0.7942381, -0.5985882, 0.040046815)
+bones/12/scale = Vector3(1, 0.99999994, 0.99999994)
+bones/13/position = Vector3(2.3431082e-10, 0.001935187, 7.519898e-10)
+bones/13/rotation = Quaternion(0.80441034, 0.17088147, -0.06504413, 0.5652369)
+bones/13/scale = Vector3(0.99999994, 1, 1)
+bones/14/position = Vector3(1.6385068e-10, 0.002637836, -3.161975e-12)
+bones/14/rotation = Quaternion(-0.89129543, 0.07746228, -0.0009752697, 0.44675606)
+bones/14/scale = Vector3(1, 0.9999999, 0.9999998)
+bones/15/position = Vector3(4.362939e-11, 0.0032320267, 7.872212e-11)
+bones/15/rotation = Quaternion(0.16589178, 0.34386662, -0.12655033, 0.9155439)
+bones/15/scale = Vector3(1, 0.99999976, 1)
+bones/16/position = Vector3(0.0012542172, 0.0021774436, -0.0007203933)
+bones/16/rotation = Quaternion(0.10348945, 0.7910667, -0.6006998, -0.05160661)
+bones/16/scale = Vector3(0.9999998, 0.99999994, 0.9999999)
+bones/17/position = Vector3(-1.1944294e-10, 0.001935187, 3.3899217e-10)
+bones/17/rotation = Quaternion(0.8179609, -0.15119012, 0.09111662, 0.5475212)
+bones/17/scale = Vector3(1.0000002, 1.0000001, 1)
+bones/18/position = Vector3(-2.688434e-11, 0.0026378362, 3.66272e-10)
+bones/18/rotation = Quaternion(-0.90439886, -0.043094058, 0.01923081, 0.4240704)
+bones/18/scale = Vector3(1, 1.0000001, 0.9999999)
+bones/19/position = Vector3(-6.866465e-11, 0.0032320255, -1.3590142e-10)
+bones/19/rotation = Quaternion(0.1658919, -0.34386665, 0.12655035, 0.9155439)
+bones/19/scale = Vector3(1, 1, 1.0000001)
+bones/21/rotation = Quaternion(-0.038797792, 0.47258416, 0.8802578, -0.01746848)
+bones/22/position = Vector3(0.022926653, -0.019291306, 0.0039565507)
+bones/23/position = Vector3(-0.022926653, -0.019291306, 0.0039565507)
+
+[node name="birdmonster" parent="Graphics" parent_id_path=PackedInt32Array(248190398) index="1" unique_id=1026270002 instance=ExtResource("3_txt0c")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="BirdMonster" parent="Graphics/birdmonster/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1026270002, 1110576754) index="0" unique_id=505704181]
+surface_material_override/0 = SubResource("StandardMaterial3D_tew2y")
+
+[editable path="Graphics/Crow"]
+[editable path="Graphics/birdmonster"]

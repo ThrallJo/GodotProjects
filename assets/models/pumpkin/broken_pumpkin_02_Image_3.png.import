@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cugna8l10llh1"
+path.s3tc="res://.godot/imported/broken_pumpkin_02_Image_3.png-9ef88b2f198ee6a6b426e3c74a8100d1.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "4d48cc5bba7d5c3b2f39d975d2f7dcbb"
+}
+
+[deps]
+
+source_file="res://assets/models/pumpkin/broken_pumpkin_02_Image_3.png"
+dest_files=["res://.godot/imported/broken_pumpkin_02_Image_3.png-9ef88b2f198ee6a6b426e3c74a8100d1.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/models/pumpkin/broken_pumpkin_02_Image_3.png"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

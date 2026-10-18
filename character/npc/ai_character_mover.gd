@@ -9,7 +9,7 @@ var moving = false
 
 func _ready():
 	super()
-	#facing_dir = -character_body.global_transform.basis.z
+	facing_dir = -character_body.global_transform.basis.z
 
 func set_facing_dir(new_face_dir : Vector3):
 	facing_dir = new_face_dir

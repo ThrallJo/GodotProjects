@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bhlfvp4u5jcnt"]
+
+[ext_resource type="PackedScene" uid="uid://d22syhntclc3q" path="res://weapons/emitter/Emitter.tscn" id="1_cuoku"]
+[ext_resource type="Script" uid="uid://m3h316o4tfs7" path="res://weapons/emitter/hit_scan_emitter.gd" id="2_awlpq"]
+
+[node name="HitScanEmitter" unique_id=1387905736 instance=ExtResource("1_cuoku")]
+script = ExtResource("2_awlpq")
+only_hit_environment = false
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="0" unique_id=1720718312]
+enabled = false
+target_position = Vector3(0, 0, -2)
+collision_mask = 73

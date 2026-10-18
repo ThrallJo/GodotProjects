@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cq3oorrvdqpak"]
+
+[ext_resource type="PackedScene" uid="uid://brq8tva4pb6ih" path="res://assets/models/bloody cube/bloody_cube_altered.tscn" id="1_ga2rr"]
+
+[node name="BloodyCube" type="CharacterBody3D" unique_id=525130771]
+
+[node name="bloody_cube_complete" parent="." unique_id=323227536 instance=ExtResource("1_ga2rr")]
+
+[editable path="bloody_cube_complete"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dlotgi8wbdugc"]
+
+[ext_resource type="PackedScene" uid="uid://bq4jyeq85y4oa" path="res://assets/models/pumpkin/pumpkin.glb" id="1_y5ptr"]
+[ext_resource type="Script" uid="uid://bvaikl1d2fdg3" path="res://assets/models/pumpkin/model_shifter.gd" id="2_8gx22"]
+[ext_resource type="PackedScene" uid="uid://bmbpfk75q7mgd" path="res://assets/models/pumpkin/pumpkin_pieces_modified.tscn" id="3_180dv"]
+
+[node name="pumpkin2" unique_id=60316692 instance=ExtResource("1_y5ptr")]
+script = ExtResource("2_8gx22")
+broken_model = ExtResource("3_180dv")
