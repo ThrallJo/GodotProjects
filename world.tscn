@@ -246,7 +246,7 @@ navigation_mesh = SubResource("NavigationMesh_gqoea")
 [node name="randomStuff" type="Node3D" parent="." unique_id=1793527810]
 
 [node name="MeatBox" parent="randomStuff" unique_id=1591789618 instance=ExtResource("5_dwbse")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4.4464064, -3)
 
 [node name="MeatBox2" parent="randomStuff" unique_id=1203140807 instance=ExtResource("5_dwbse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, -3)
@@ -349,13 +349,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.861408, 0.8027053, -20.00
 [node name="Player" parent="." unique_id=119056893 instance=ExtResource("1_f3sb7")]
 transform = Transform3D(0.8035878, 0, 0.59518623, 0, 1, 0, -0.59518623, 0, 0.8035878, -1.5503006, -9.536743e-07, -8.668495)
 
-[node name="Camera3D" parent="Player" index="3" unique_id=476554845]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.5, 0)
-
-[node name="SpotLight3D" parent="Player/Camera3D/WeaponsManager/Lantern" parent_id_path=PackedInt32Array(119056893, 1077120325) index="1" unique_id=1009112671]
+[node name="SpotLight3D" parent="Player/WeaponManager/Weapons/Lantern" parent_id_path=PackedInt32Array(119056893, 1077120325) index="1" unique_id=1009112671]
 light_volumetric_fog_energy = 2.0
 distance_fade_enabled = true
 spot_range = 59.594563
+
+[node name="Camera3D" parent="Player" index="4" unique_id=476554845]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.5, 0)
 
 [node name="SubViewportCam" parent="Player/PlayerUILayer/SubViewportContainer/SubViewport" parent_id_path=PackedInt32Array(119056893, 721192975) index="0" unique_id=797059601]
 transform = Transform3D(0.70836866, -0.27463526, 0.6502226, 0, 0.92120045, 0.38908848, -0.70584273, -0.27561808, 0.6525495, 2.7963002, 2.4084253, 1.0329453)
@@ -375,7 +375,7 @@ light_color = Color(1, 0.7490196, 0.6392157, 1)
 light_energy = 0.9996171
 
 [node name="Moon" parent="DayNightCycle" index="2" unique_id=1851591904]
-transform = Transform3D(0.8965314, -0.2489926, -0.36637905, 1.5052246e-06, 0.82708037, -0.5620834, 0.44297954, 0.50392497, 0.74150413, 0, 0, -4.868913)
+transform = Transform3D(0.89653146, -0.24899258, 0.366379, -1.5052226e-06, -0.82708037, -0.5620834, 0.44297948, 0.50392497, -0.7415042, 0, 0, -4.868913)
 visible = false
 layers = 1015809
 light_energy = 0.0
@@ -393,4 +393,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.257736, 0, -16.786135)
 transform = Transform3D(-0.7564861, 0, -0.65400976, 0, 1, 0, 0.65400976, 0, -0.7564861, -4.7477727, -9.536743e-07, -13.158773)
 
 [editable path="Player"]
+[editable path="Player/WeaponManager/Weapons/Musket/Graphics/Shotgun"]
 [editable path="DayNightCycle"]
