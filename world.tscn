@@ -246,7 +246,7 @@ navigation_mesh = SubResource("NavigationMesh_gqoea")
 [node name="randomStuff" type="Node3D" parent="." unique_id=1793527810]
 
 [node name="MeatBox" parent="randomStuff" unique_id=1591789618 instance=ExtResource("5_dwbse")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4.4464064, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.053085, 2.225721, -3)
 
 [node name="MeatBox2" parent="randomStuff" unique_id=1203140807 instance=ExtResource("5_dwbse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, -3)
@@ -255,7 +255,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, -3)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.419646, 1.9999998, -21.022184)
 
 [node name="MeatBox4" parent="randomStuff" unique_id=233042897 instance=ExtResource("5_dwbse")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1173677, 2, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4623213, 0.40702868, 6.6254225)
 
 [node name="MeatBox5" parent="randomStuff" unique_id=2012953983 instance=ExtResource("5_dwbse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.117368, 2, -3)
