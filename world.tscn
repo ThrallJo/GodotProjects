@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ud5fy46p1n5d" path="res://character/npc/stalker_npc.tscn" id="10_wse8f"]
 [ext_resource type="PackedScene" uid="uid://cxc45frqhmcvn" path="res://character/npc/bloody_npc.tscn" id="12_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://klq2w3fx4pjo" path="res://character/npc/holy_npc.tscn" id="13_2o6r5"]
+[ext_resource type="PackedScene" uid="uid://ccbthbivg8cbg" path="res://terrain.tscn" id="14_70uel"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fj7yv"]
 size = Vector3(50, 50, 1)
@@ -134,6 +135,7 @@ subdivision = 32
 
 [node name="plane" type="MeshInstance3D" parent="environment" unique_id=1253203698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -500)
+visible = false
 mesh = SubResource("PlaneMesh_gqoea")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="environment/plane" unique_id=1839083537]
@@ -391,6 +393,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.257736, 0, -16.786135)
 
 [node name="HolyNPC" parent="." unique_id=1866678803 instance=ExtResource("13_2o6r5")]
 transform = Transform3D(-0.7564861, 0, -0.65400976, 0, 1, 0, 0.65400976, 0, -0.7564861, -4.7477727, -9.536743e-07, -13.158773)
+
+[node name="Terrain" parent="." unique_id=57245926 instance=ExtResource("14_70uel")]
 
 [editable path="Player"]
 [editable path="Player/WeaponManager/Weapons/Musket/Graphics/Shotgun"]
